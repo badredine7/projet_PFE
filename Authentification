@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentification</title>
+     <!-- CSS pour logo gpc -->
+   <style>
+    #logo { max-width: 150px; } /* Ajustez la taille du logo selon vos besoins */
+
+    form {
+        max-width: 300px;
+        margin: 20px auto;
+    }
+</style>    
+    <style>
+        form {
+            max-width: 300px;/*définit la largeur maximale du formulaire à 300 pixels.*/
+            margin: 0 auto;/* centre le formulaire horizontalement sur la page*/
+        }
+        input[type="text"], input[type="password"], input[type="submit"] {
+            display: block;/* rend les éléments de formulaire (input) des éléments de type bloc*/
+            width: 100%;/*spécifie que les éléments de formulaire doivent avoir une largeur de 100%, remplissant ainsi toute la largeur du formulaire.*/
+            margin-bottom: 10px;/* ajoute une marge inférieure de 10 pixels entre chaque champ de formulaire, assurant un espacement uniforme entre eux.*/
+        }
+    </style>
+</head>
+<body>
+     <!-- logo pour gpc -->
+     <img id="logo" src="C:\Users\badre\OneDrive\Bureau\projet PFE/logo gpc.png" alt="Logo de votre entreprise">
+
+    <h1>Authentification</h1>
+    <form id="loginForm">
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Se connecter">
+    </form>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+
+            // Récupérer les valeurs du formulaire
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Vérifier les informations d'identification (remplacer par votre propre logique d'authentification)
+            if (username == "admin" && password == "admin") {
+                // Rediriger vers la page souhaitée
+                window.location.href = "file:///C:/Users/badre/OneDrive/Bureau/projet%20PFE/page_principale.html"; // Remplacer par l'URL de la page cible
+            } else {
+                alert("Nom d'utilisateur ou mot de passe incorrect."); // Afficher un message d'erreur
+            }
+        });
+    </script>
+</body>
+</html>
